@@ -4,9 +4,6 @@ const doc = {
   info: {
     title: "BookVerse API",
     description: "Description",
-  },
-  host: null,
-  schemes: ["http", "https"],
 };
 
 const outputFile = "./swagger/swagger.json";
