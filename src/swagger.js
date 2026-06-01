@@ -4,7 +4,6 @@ const doc = {
   info: {
     title: "BookVerse API",
     description: "Description",
-  }
 };
 
 const outputFile = "./swagger/swagger.json";

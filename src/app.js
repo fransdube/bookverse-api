@@ -13,10 +13,15 @@ app.use(
   cors({
     origin: process.env.FRONTEND_URL,
     credentials: true,
-  })
+  }),
 );
 app.use(express.json());
 app.use(morgan("dev"));
+
+// Root Redirect to Swagger
+app.get("/", (req, res) => {
+  res.redirect("/api-docs");
+});
 
 // Health Check
 app.get("/health", (req, res) => {
