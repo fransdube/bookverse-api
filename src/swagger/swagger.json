@@ -5,6 +5,8 @@
     "description": "Description",
     "version": "1.0.0"
   },
+  "basePath": "/",
+  "schemes": ["http", "https"],
   ],
   "paths": {
     "/": {
