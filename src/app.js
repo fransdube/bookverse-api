@@ -13,26 +13,26 @@ app.use(
   cors({
     origin: process.env.FRONTEND_URL,
     credentials: true,
-  })
+  }),
 );
 app.use(express.json());
 app.use(morgan("dev"));
+
+// Root Redirect to Swagger
+app.get("/", (req, res) => {
+  res.redirect("/api-docs");
+});
 
 // Health Check
 app.get("/health", (req, res) => {
   res.status(200).json({ status: "ok", timestamp: new Date().toISOString() });
 });
 
-// API Routes (to be added later)
-app.use("/api/books", (req, res) => {
-  res.send({ message: "Books endpoint" });
-});
-app.use("/api/authors", (req, res) => {
-  res.send({ message: "Authors endpoint" });
-});
-app.use("/api/orders", (req, res) => {
-  res.send({ message: "Orders endpoint" });
-});
+// API Routes
+app.use("/api/books", require("./routes/books"));
+app.use("/api/authors", require("./routes/authors"));
+app.use("/api/orders", require("./routes/orders"));
+app.use("/api/users", require("./routes/users"));
 
 // Swagger Docs
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
