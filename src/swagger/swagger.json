@@ -7,7 +7,10 @@
   },
   "basePath": "/",
   "schemes": ["http", "https"],
+<<<<<<< feature/add-missing-routes-61710060437895568
+=======
   ],
+>>>>>>> main
   "paths": {
     "/": {
       "get": {
