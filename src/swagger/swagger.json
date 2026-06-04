@@ -6,7 +6,9 @@
     "version": "1.0.0"
   },
   "basePath": "/",
-  "schemes": ["http", "https"],
+  "schemes": [
+    "http",
+    "https"
   ],
   "paths": {
     "/": {
